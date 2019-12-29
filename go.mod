@@ -1,4 +1,4 @@
-module github.com/Good-Will/google-cloud
+module github.com/Good-Will/gcloud
 
 go 1.12
 
