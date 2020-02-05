@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/Good-Will/google-cloud/util"
+	"github.com/Good-Will/gcloud/util"
 	"github.com/Good-Will/middlewares"
 )
 
