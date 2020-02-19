@@ -11,7 +11,8 @@ import (
 	"cloud.google.com/go/storage"
 )
 
-// FromGCS TODO
+// FromGCS is a configuraiton loader function loading a configuration file in GCS into bytes.
+// This can be used with LoadConfig function in github.com/Good-Will/configuration.
 func FromGCS(loc string) []byte {
 
 	if !strings.HasPrefix(loc, "gs://") {

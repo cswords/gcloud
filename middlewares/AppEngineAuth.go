@@ -6,7 +6,7 @@ import (
 	"net/http"
 )
 
-// CronMiddleware TODO
+// CronMiddleware is a middleware function to validate if an HTTP call is fron GAE cron or cloud scheduler by checking HTTP header X-Appengine-Cron and X-CloudScheduler.
 func CronMiddleware(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		isAppEngineCron := r.Header.Get("X-Appengine-Cron")
@@ -22,7 +22,7 @@ func CronMiddleware(next http.Handler) http.Handler {
 	})
 }
 
-// TaskMiddleware TODO
+// TaskMiddleware is a middleware function to validate if an HTTP call is from cloud tasks by checking HTTP header X-Appengine-Taskname and X-Appending-Queuename.
 func TaskMiddleware(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		t, ok := r.Header["X-Appengine-Taskname"]

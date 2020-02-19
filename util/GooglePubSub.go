@@ -8,25 +8,25 @@ import (
 	"cloud.google.com/go/pubsub"
 )
 
-// GooglePubSub TODO
+// GooglePubSub - A GooglePubSub object indicates the project id and topic id of a PubSub topic in GCP.
 type GooglePubSub struct {
 	ProjectID string
 	TopicID   string
 }
 
-// InProject TODO
+// InProject sets the project id of a GooglePubSub object.
 func (g *GooglePubSub) InProject(projectID string) *GooglePubSub {
 	g.ProjectID = projectID
 	return g
 }
 
-// Topic TODO
+// Topic sets the topic id of a GooglePubSub object.
 func (g *GooglePubSub) Topic(topicID string) *GooglePubSub {
 	g.TopicID = topicID
 	return g
 }
 
-// Pub TODO
+// Pub publishes a data record in bytes to a topic in GCP indicted by a GooglePubSub object.
 func (g *GooglePubSub) Pub(data []byte) error {
 	ctx := context.Background()
 	client, err := pubsub.NewClient(ctx, g.ProjectID)
