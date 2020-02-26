@@ -6,8 +6,8 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/Good-Will/gcloud/util"
-	"github.com/Good-Will/middlewares"
+	"github.com/cswords/gcloud/util"
+	"github.com/cswords/middlewares"
 )
 
 // NewDumpToPubSubMiddleware creates a new DumpMiddleware object which publish the data records including request and response of all HTTP roundtrips to a PubSub topic in GCP.
